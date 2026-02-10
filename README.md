@@ -17,7 +17,6 @@ Este repositorio sirve como muestra de código limpio, estructurado y siguiendo 
 - [Estructura del Proyecto](#-estructura-del-proyecto)
 - [Documentación de la API](#-documentación-de-la-api)
 - [Instalación y Configuración](#-instalación-y-configuración)
-- [Autor](#-autor)
 
 ---
 
