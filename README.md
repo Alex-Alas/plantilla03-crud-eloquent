@@ -1,59 +1,141 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🚀 API RESTful con Laravel 12 - Gestión de Usuarios
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
 
-## About Laravel
+Este proyecto es una implementación robusta de una API RESTful desarrollada con el framework **Laravel 12**. El objetivo principal es demostrar la gestión eficiente de datos utilizando **Eloquent ORM**, incluyendo operaciones CRUD completas y manejo de eliminaciones lógicas (Soft Deletes).
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Este repositorio sirve como muestra de código limpio, estructurado y siguiendo los estándares modernos de desarrollo backend.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 📋 Tabla de Contenidos
 
-## Learning Laravel
+- [Características Principales](#-características-principales)
+- [Tecnologías Utilizadas](#-tecnologías-utilizadas)
+- [Estructura del Proyecto](#-estructura-del-proyecto)
+- [Documentación de la API](#-documentación-de-la-api)
+- [Instalación y Configuración](#-instalación-y-configuración)
+- [Autor](#-autor)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## ✨ Características Principales
 
-## Laravel Sponsors
+Este sistema backend incluye las siguientes funcionalidades clave:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+*   **CRUD Completo:** Creación, lectura, actualización y eliminación de usuarios.
+*   **Eloquent ORM:** Uso avanzado de modelos y relaciones de Laravel.
+*   **Soft Deletes:** Implementación de borrado lógico para recuperación de datos (papelera de reciclaje).
+*   **API Versioning:** Rutas prefijadas por versión (`v1`) para escalabilidad futura.
+*   **Validación de Datos:** Uso de Form Requests para asegurar la integridad de la información.
+*   **Recursos API:** Uso de `UserResource` para transformación y estandarización de respuestas JSON.
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## 🛠 Tecnologías Utilizadas
 
-## Contributing
+| Tecnología | Versión | Descripción |
+| :--- | :---: | :--- |
+| **PHP** | 8.2+ | Lenguaje de programación del lado del servidor. |
+| **Laravel** | 12.x | Framework PHP utilizado para la arquitectura MVC. |
+| **MySQL** | 8.0 | Sistema de gestión de bases de datos relacional. |
+| **Composer** | 2.x | Gestor de dependencias para PHP. |
+| **Git** | 2.x | Control de versiones. |
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## 📂 Estructura del Proyecto
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+A continuación, se destacan los archivos y directorios más relevantes del proyecto:
 
-## Security Vulnerabilities
+```
+plantilla03-crud-eloquent/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   │   └── UserController.php    # Lógica principal de los endpoints
+│   │   ├── Requests/                 # Validaciones de entrada
+│   │   └── Resources/
+│   │       └── UserResource.php      # Formato de respuesta JSON
+│   └── Models/
+│       └── User.php                  # Modelo Eloquent con SoftDeletes
+├── routes/
+│   └── api.php                       # Definición de rutas (API v1)
+├── database/
+│   ├── migrations/                   # Esquema de base de datos
+│   └── seeders/                      # Datos de prueba
+└── composer.json                     # Dependencias del proyecto
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## 📚 Documentación de la API
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+La API expone los siguientes endpoints públicos bajo el prefijo `/api/v1/`.
+
+| Método | Endpoint | Descripción | Parámetros Requeridos |
+| :---: | :--- | :--- | :--- |
+| `GET` | `/users` | Obtener lista de todos los usuarios. | N/A |
+| `POST` | `/users` | Registrar un nuevo usuario. | `name`, `email`, `password` |
+| `GET` | `/users/{id}` | Obtener detalles de un usuario específico. | `id` (entero) |
+| `PUT` | `/users/{id}` | Actualizar un usuario completamente. | `name`, `email` |
+| `PATCH` | `/users/{id}` | Actualizar campos específicos de un usuario. | `name` o `email` (opcionales) |
+| `DELETE` | `/users/{id}` | Eliminar un usuario (Soft Delete). | `id` (entero) |
+| `POST` | `/users/{id}/restore` | Restaurar un usuario eliminado. | `id` (entero) |
+
+> **Nota:** Todas las respuestas están en formato JSON y siguen estándares HTTP (200 OK, 201 Created, 404 Not Found, etc.).
+
+---
+
+## 🚀 Instalación y Configuración
+
+Sigue estos pasos para levantar el proyecto en tu entorno local:
+
+1.  **Clonar el repositorio:**
+    ```bash
+    git clone https://github.com/tu-usuario/plantilla03-crud-eloquent.git
+    cd plantilla03-crud-eloquent
+    ```
+
+2.  **Instalar dependencias:**
+    ```bash
+    composer install
+    ```
+
+3.  **Configurar entorno:**
+    Duplica el archivo `.env.example` y renómbralo a `.env`. Luego configura tus credenciales de base de datos.
+    ```bash
+    cp .env.example .env
+    ```
+
+4.  **Generar clave de aplicación:**
+    ```bash
+    php artisan key:generate
+    ```
+
+5.  **Ejecutar migraciones:**
+    Crea las tablas en tu base de datos configurada.
+    ```bash
+    php artisan migrate
+    ```
+
+6.  **Iniciar el servidor:**
+    ```bash
+    php artisan serve
+    ```
+    La API estará disponible en `http://localhost:8000/api/v1/users`.
+
+---
+
+## 👤 Autor
+
+Desarrollado como parte del portafolio profesional de Desarrollo Backend.
+
+*   **Perfil:** [Tu Nombre]
+*   **LinkedIn:** [Tu Perfil de LinkedIn]
+*   **Email:** [tu-email@ejemplo.com]
+
+---
+*Este README fue generado automáticamente para documentar la calidad técnica del proyecto.*
