@@ -128,14 +128,5 @@ Sigue estos pasos para levantar el proyecto en tu entorno local:
     La API estará disponible en `http://localhost:8000/api/v1/users`.
 
 ---
-
-## 👤 Autor
-
 Desarrollado como parte del portafolio profesional de Desarrollo Backend.
-
-*   **Perfil:** [Tu Nombre]
-*   **LinkedIn:** [Tu Perfil de LinkedIn]
-*   **Email:** [tu-email@ejemplo.com]
-
----
 *Este README fue generado automáticamente para documentar la calidad técnica del proyecto.*
